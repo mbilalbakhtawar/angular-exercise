@@ -1,0 +1,28 @@
+<div class="container">
+  <h2>Create a new customer or select an existing one</h2>
+  <h4>lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </h4>
+
+  <input type="text" id="searchCustomer" name="customer" placeholder="Search For a Customer" class="mt-10 mb-10">
+
+  <div class="cards">
+    <div class="card add-customer">
+      <img src="assets/plus.png" alt="Avatar" class="avatar">
+      <div class="ml-10 bold">Create a new customer</div>
+    </div>
+    <ng-container *ngFor="let customer of customers">
+      <div class="card" [ngStyle]="{'border-top': '8px solid '+customer.cardBorder}">
+
+        <div class="header">
+          <img src="assets/{{customer.profile_image}}" alt="Avatar" class="avatar">
+          <div class="customer-info">
+            <div class="customer-company">{{customer.company}}</div>
+            <div class="customer-name">{{customer.name}}</div>
+          </div>
+        </div>
+
+        <div class="customer-description">{{customer.description}}</div>
+
+      </div>
+    </ng-container>
+  </div>
+</div>
